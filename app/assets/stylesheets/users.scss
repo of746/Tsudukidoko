@@ -1,0 +1,71 @@
+/* エラーメッセージ */
+#error_explanation {
+  color: #fff;
+}
+
+#error_explanation h2 {
+  font-size: 20px;
+  padding: 10px;
+  background-color: #f00;
+}
+
+#error_explanation li {
+  color: #f00;
+  margin-bottom: 10px;
+}
+
+//ログインページ
+.logInPage {
+  position: relative;
+  top: 150px;
+  padding: 0 100px 100px;
+}
+
+.login-signin-page {
+  padding: 30px 300px;
+}
+
+.login-signin-form {
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 30px 120px;
+  text-align: left;
+}
+
+.login-signin-form h2 {
+  margin-bottom: 20px;
+}
+
+.login-link {
+  border-top: 1px solid #333;
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 30px;
+}
+
+@media (max-width: 767px) {
+  .logInPage {
+    padding: 0 10px 100px;
+  }
+
+  .login-signin-form {
+    padding: 30px 10px;
+  }
+}
+
+
+
+//新規登録ページ
+.signInPage {
+  position: relative;
+  top: 150px;
+  padding: 0 100px 100px;
+}
+
+@media (max-width: 767px) {
+  .signInPage {
+    padding: 0 10px 100px;
+  }
+}
+
+

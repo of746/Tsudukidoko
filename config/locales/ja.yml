@@ -1,0 +1,28 @@
+ja:
+  activerecord:
+    errors:
+      models:
+        user:
+          blank: "を入力してください"
+        seriesbook:
+          blank: "を入力してください"
+        store:
+          blank: "を入力してください"
+    models:
+      user: "ユーザー"
+      seriesbook: "シリーズ"
+      book: "巻数"
+      store: "ストア"
+    attributes:
+      user:
+        email: "メールアドレス"
+        password: "パスワード"
+      seriesbook:
+        title: "シリーズタイトル"
+        author: "作者名"
+        blank: "を入力してください"
+      book:
+        volume_number: "巻数"
+      store:
+        store_name: "ストア名"
+

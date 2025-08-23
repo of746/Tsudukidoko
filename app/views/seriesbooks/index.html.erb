@@ -1,0 +1,38 @@
+<div class="topPage">
+
+  <!-- 電子書籍登録画面に移行する -->
+  <%= link_to(new_seriesbook_path, class: "seriesRegistration-link") do %>
+    <div class="seriesRegistration-button">電子書籍を登録</div>
+  <% end %>
+
+  <div class="topView">
+    <p>複数のストアで購入した電子書籍を<br class="sp-br">まとめて管理。<br>
+    購入状況がすぐ確認でき、<br class="sp-br">重複購入や探す手間を省けます。</p>
+  </div>
+
+<div class="myBookshelf">
+    <h2>マイ本棚</h2>
+
+    <!-- 検索フォーム -->
+    <div class="searchForm">
+      <%= form_with url: seriesbooks_path, method: :get, local: true do |f| %>
+        <%= f.text_field :q, placeholder: "タイトルまたは作者名で検索", value: params[:q], class: "input" %>
+        <%= f.submit "検索", class: "input-button", class: "input-button" %>
+      <% end %>
+    </div>
+
+    <div class="seriesList-container">
+      <% @seriesbooks.each do |seriesbook| %>
+        <%= link_to seriesbook_path(seriesbook) do %>
+            <div class="seriesList">
+              <% if seriesbook.cover_url.present? %>
+                <%= image_tag seriesbook.cover_url, alt: "カバー画像", class: "index-coverImage" %>
+              <% else %>
+                <%= image_tag '/assets/default.jpg', alt: "デフォルト画像", class: "index-coverImage" %>
+              <% end %>
+            </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

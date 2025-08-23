@@ -1,0 +1,288 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+* {
+  margin: 0;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fefefe;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+.flex {
+  display: flex;
+}
+
+
+/* エラーメッセージ */
+.error-message {
+  padding-bottom: 30px;
+  padding-left: 30px;
+}
+
+.error-message li {
+  color: #f00;
+  font-size: 14px;
+  list-style-type: disc;
+}
+
+
+/* フラッシュメッセージ */
+.flash {
+  border-radius: 5px;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+  align-items: center;
+  color: #fff;
+  padding: 10px 30px;
+}
+
+.notice {
+  background-color: #333;
+}
+
+.alert {
+  background-color: #f00;
+}
+
+
+/* 戻るリンク */
+.back_link {
+  padding: 30px 0;
+}
+
+.back_link a {
+  color: #333;
+  text-decoration: none;
+}
+
+.back_link::before {
+  content: "\2190";
+  padding-right: 5px;
+}
+
+
+/* 編集ボタン */
+.edit-button {
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 600;
+  background-color: #3c70ff;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.edit-button:hover {
+  cursor: pointer;
+  background-color: #779bff;
+}
+
+/* 削除ボタン */
+.delete-button {
+  border: 0px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 600;
+  background-color: #ff463c;
+  text-decoration: none;
+}
+
+.delete-button:hover {
+  cursor: pointer;
+  background-color: #ff7777;
+}
+
+/* ヘッダー */
+.header {
+  background-color: #fefefe;
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.3);
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100vw;
+  z-index: 1;
+}
+
+.header a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #333;
+}
+
+.logoImage {
+  margin-left: 30px;
+  width: 300px;
+}
+.pc-nav_item {
+  margin-right: 30px;
+}
+
+.sp-nav {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .logoImage {
+    margin-left: 10px;
+    width: 200px;
+  }
+
+  .pc-nav {
+    display: none;
+  }
+
+  .sp-nav {
+    display: block;
+  }
+
+  .nav_list {
+    text-align: center;
+    padding: 100px 40px 0 40px;
+  }
+
+  .nav_item {
+    border-bottom: 1px solid #fefefe;
+    margin-bottom: 20px;
+  }
+
+  .nav_item a {
+    color: #fefefe;
+    font-size: 20px;
+  }
+
+  .drawer_hidden {
+    display: none;
+  }
+
+  .drawer_open {
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+    cursor: pointer;
+  }
+
+  .drawer_open span,
+  .drawer_open span:before,
+  .drawer_open span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background: #aaa;
+    transition: 0.5s;
+    position: absolute;
+  }
+
+  .drawer_open span:before {
+    bottom: 8px;
+  }
+
+  .drawer_open span:after {
+    top: 8px;
+  }
+
+  #drawer_input:checked ~ .drawer_open span {
+    background: rgba(255, 255, 255, 0);
+  }
+
+  #drawer_input:checked ~ .drawer_open span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+  }
+
+  #drawer_input:checked ~ .drawer_open span::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  .nav_content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.8);
+    transition: .5s;
+  }
+
+  .nav_list {
+    list-style: none;
+  }
+
+  #drawer_input:checked ~ .nav_content {
+    left: 0;
+  }
+}
+
+/* 入力フォーム部品 */
+.inputForm label {
+  text-align: left;
+  font-weight: 600;
+}
+
+.inputForm span {
+  color: #f00;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.text_field {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.submit_button-container {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.submit_button {
+  background-color: #3c70ff;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px;
+  width: 70%;
+}
+
+.submit_button:hover {
+  cursor: pointer;
+  background-color: #779bff;
+}

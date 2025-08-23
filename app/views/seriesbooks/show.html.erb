@@ -1,0 +1,72 @@
+<div class="seriesbook-showPage">
+  <div class="back_link"><%= link_to "マイ本棚に戻る", :seriesbooks %></div>
+    <h2>シリーズ情報</h2>
+      <div class="seriesDetail">
+        <div class="seriesImg-TitleAuthor">
+          <div class="seriesImg">
+              <% if @seriesbook.cover_url.present? %>
+                  <%= image_tag @seriesbook.cover_url, alt: "カバー画像" %>
+                <% else %>
+                  <%= image_tag '/assets/default.jpg', alt: "デフォルト画像" %>
+              <% end %>
+          </div>
+
+          <div class="seriesTitleAuthor">
+            <p class="seriesTitle"><%= @seriesbook.title %></p><br class="pc-br">
+            <p class="seriesAuthor"><%= @seriesbook.author %></p>
+          </div>
+        </div>
+
+          <div class="seriesEditDelete-button">
+            <%= link_to "編集", edit_seriesbook_path(@seriesbook), class: "seriesEdit-button" %>
+            <%= button_to "削除", seriesbook_path(@seriesbook),
+                    class: "seriesDelete-button",
+                    method: :delete,
+                    data: { confirm: "本当に削除しますか？" } %>
+          </div>
+      </div>
+
+    <h2>所有巻リスト</h2>
+    <div class="volumeLists-addForm">
+      <div class="volumeLists-container">
+        <div class="volumeLists">
+          <div class="volumeList-operation">
+            <div class="volumeList-sort">
+              <div class="sort-link flex"><p>並び替え:</p>
+                <%= link_to "昇順",
+                      seriesbook_path(@seriesbook, sort: "asc", store_id: params[:store_id]),
+                      data: { turbo_frame: "books_list" } %>
+                <%= link_to "降順",
+                      seriesbook_path(@seriesbook, sort: "desc", store_id: params[:store_id]),
+                      data: { turbo_frame: "books_list" } %>
+              </div>
+            </div>
+
+            <div class="volumeList-storeSearch">
+              <%= form_with url: seriesbook_path(@seriesbook), method: :get, data: { turbo_frame: "books_list" } do |f| %>
+                <%= f.label :store_id, "ストアで絞り込む：" %>
+                <%= f.collection_select :store_id, Store.where(user_id: nil).or(Store.where(user_id: current_user.id)), :id, :store_name, include_blank: "すべて" %>
+                <%= f.submit "絞り込む" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <p class="totalBooks">合計数：<%= @total_books %> 冊</p>
+
+        <!-- 所有巻リスト -->
+        <%= turbo_frame_tag "books_list" do %>
+          <%= render "books/list", books: @books, seriesbook: @seriesbook %>
+        <% end %>
+      </div>
+
+      <!-- 巻数追加フォーム -->
+      <div class="volumeAddForm-container">
+        <h3>巻数を追加</h3>
+        <%= turbo_frame_tag "book_form" do %>
+          <%= render "books/bulk_form", seriesbook: @seriesbook %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<div class="addStore-frame">
+  <%= form_with model: store do |f| %>
+    <%= f.text_field :store_name, placeholder: "最大20文字", maxlength: "20", class: "add-button" %>
+    <%= f.submit "追加" %>
+  <% end %>
+</div>

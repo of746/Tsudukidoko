@@ -1,0 +1,19 @@
+<div class="storePage">
+  <div class="back_link"><%= link_to "戻る", :back %></div>
+  <div class="storeList-container">
+    <h2>電子書籍ストア一覧</h2>
+    <div class="storeList">
+      <div class="addStore">
+        <h3>新規ストア追加</h3>
+        <%= turbo_frame_tag "new_store" do %>
+          <%= render "form", store: @store %>
+        <% end %>
+      </div>
+
+      <div id="stores">
+        <%= render @stores %>
+      </div>
+    </div>
+  </div>
+</div>
+

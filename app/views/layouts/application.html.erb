@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>つづきどこ？</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  <header class="header">
+    <%= link_to root_path do %>
+      <%= image_tag "/assets/logo.jpg", alt: "ロゴ画像", class: "logoImage" %>
+    <% end %>
+    <% if user_signed_in? %> <!-- ユーザーがログインしているか調べる -->
+      <!-- ユーザーがログインしていた時の処理 -->
+      <div class="pc-nav flex">
+        <div class="pc-nav_item"><%= link_to "マイ本棚", seriesbooks_index_path %></div> <!-- マイ本棚に移行する -->
+        <div class="pc-nav_item"><%= link_to "電子書籍ストア一覧", stores_index_path %></div> <!-- 電子書籍ストアの一覧画面に移行する -->
+        <div class="pc-nav_item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div> <!-- ログアウトをする -->
+      </div>
+
+      <div class="sp-nav">
+        <input id="drawer_input" class="drawer_hidden" type="checkbox">
+        <label for="drawer_input" class="drawer_open"><span></span></label>
+        <nav class="nav_content">
+          <ul class="nav_list">
+            <li class="nav_item"><%= link_to "マイ本棚", seriesbooks_index_path %></li>
+            <li class="nav_item"><%= link_to "電子書籍ストア一覧", stores_index_path %></li>
+            <li class="nav_item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </nav>
+      </div>
+    <% else %>
+    <!-- ユーザーがログインしていない時の処理 -->
+      <div class="pc-nav flex">
+        <div class="pc-nav_item"><%= link_to "ゲストログイン(閲覧用)", guest_sign_in_path, method: :post %></div>
+        <div class="pc-nav_item"><%= link_to "ログイン", new_user_session_path, class: 'post' %></div> <!-- ログイン画面に移行する -->
+        <div class="pc-nav_item"><%= link_to "アカウント登録", new_user_registration_path, class: 'post' %></div> <!-- アカウント登録画面に移行する -->
+      </div>
+
+      <div class="sp-nav">
+        <input id="drawer_input" class="drawer_hidden" type="checkbox">
+        <label for="drawer_input" class="drawer_open"><span></span></label>
+        <nav class="nav_content">
+          <ul class="nav_list">
+            <li class="nav_item"><%= link_to "ゲストログイン(閲覧用)", guest_sign_in_path, method: :post %></li>
+            <li class="nav_item"><%= link_to "ログイン", new_user_session_path, class: 'post' %></li>
+            <li class="nav_item"><%= link_to "アカウント登録", new_user_registration_path, class: 'post' %></li>
+          </ul>
+        </nav>
+      </div>
+    <% end %>
+  </header>
+
+  <%= yield %>
+
+  <!-- フラッシュメッセージ -->
+  <% if flash[:notice] %>
+    <div class="flash notice"><%= flash[:notice] %></div>
+  <% end %>
+  <% if flash[:alert] %>
+    <div class="flash alert"><%= flash[:alert] %></div>
+  <% end %>
+
+  <footer class="footer">
+  </footer>
+
+  </body>
+</html>

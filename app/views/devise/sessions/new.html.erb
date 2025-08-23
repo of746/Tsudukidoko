@@ -1,0 +1,26 @@
+<div class="logInPage">
+  <div class="login-signin-form">
+    <h2>ログイン</h2>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="inputForm">
+        <%= f.label :email, "メールアドレス" %><span>（必須）</span></br>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレスを入力", class: "text_field" %>
+      </div>
+
+      <div class="inputForm">
+        <%= f.label :password, "パスワード" %><span>（必須）</span></br>
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワードを入力", class: "text_field" %>
+      </div>
+
+      <div class="submit_button-container">
+        <%= f.submit "ログイン", class: "submit_button"%>
+      </div>
+
+      <div class="login-link">
+        <p>はじめてご利用の方</p>
+        <%= link_to "アカウント登録", new_user_registration_path, class: "link-button" %>
+      </div>
+    <% end %>
+  </div>
+</div>

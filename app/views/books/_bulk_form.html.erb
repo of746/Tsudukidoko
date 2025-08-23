@@ -1,0 +1,17 @@
+<div class="volumeAddForm">
+  <%= form_with model: Book.new, url: bulk_create_seriesbook_books_path(seriesbook), method: :post, data: { turbo_frame: "books_list" } do |f| %>
+    <div class="volumeAddForm-inputField">
+      <%= f.label :store_id, "購入ストア" %><br>
+      <%= f.collection_select :store_id, @stores, :id, :store_name, prompt: "ストアを選択" %>
+    </div>
+
+    <div class="volumeAddForm-inputField">
+      <%= f.label :volumes, "巻数（1〜3巻と5巻の場合は 1-3, 5 と入力）" %><br>
+      <%= f.text_field :volumes, placeholder: "例：1-3, 5" %>
+    </div>
+
+    <div class="submit_button-container">
+      <%= f.submit "追加", class: "submit_button" %>
+    </div>
+  <% end %>
+</div>

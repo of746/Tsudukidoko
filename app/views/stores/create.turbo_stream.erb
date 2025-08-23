@@ -1,0 +1,3 @@
+<%= turbo_stream.append "stores", partial: "stores/store", locals: { store: @store } %>
+<%= turbo_stream.replace "new_store", partial: "stores/form", locals: { store: Store.new } %>
+

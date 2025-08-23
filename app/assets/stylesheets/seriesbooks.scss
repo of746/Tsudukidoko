@@ -1,0 +1,388 @@
+.pc-br {
+  display: block;
+}
+
+.sp-br {
+  display: none;
+}
+
+//index
+.topPage {
+  position: relative;
+  top: 100px;
+}
+
+/* シリーズ新規登録ボタン */
+.seriesRegistration-link {
+  color: #fff;
+  font-weight: 600;
+}
+
+.seriesRegistration-button {
+  background-color: #3c70ff;
+  border-radius: 50px;
+  box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  padding: 20px 30px;
+  z-index: 2;
+}
+
+.seriesRegistration-button a {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.seriesRegistration-button:hover {
+  cursor: pointer;
+  background-color: #779bff;
+}
+
+.topView {
+  height: 200px;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topView p {
+  text-align: center;
+  color: #fff;
+  display: inline-block;
+}
+
+.myBookshelf {
+  padding: 30px 50px 50px;
+}
+
+.myBookshelf h2 {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.input {
+  padding: 10px;
+  width: 500px;
+}
+
+.input-button {
+  padding: 7px 10px;
+}
+
+.seriesList-container {
+  padding: 10px 10px;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+  gap: 20px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.seriesList-container a {
+  text-decoration: none;
+}
+
+.seriesList {
+  box-shadow: 0px 5px 15px 3px rgba(0, 0, 0, 0.35);
+  padding-top: 5px;
+}
+
+.index-coverImage {
+  width: 100%;
+  height: 300px;
+}
+
+@media (max-width: 767px) {
+  .topView {
+    padding: 30px;
+  }
+
+  .sp-br {
+    display: block;
+  }
+
+  .input {
+    width: auto;
+  }
+}
+
+//show
+.seriesbook-showPage {
+  position: relative;
+  top: 100px;
+  padding: 0 50px 100px;
+}
+
+.seriesDetail {
+  background-color: #eee;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+
+.seriesImg img {
+  width: 200px;
+}
+
+.seriesImg-TitleAuthor {
+  display: flex;
+  align-items: center;
+}
+
+.seriesTitleAuthor {
+  margin-left: 40px;
+}
+
+.seriesTitle {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.seriesAuthor {
+  color: #5e5e5e;
+  font-size: 14px;
+}
+
+.seriesEditDelete-button {
+  display: flex;
+}
+
+.seriesEdit-button {
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 600;
+  background-color: #3c70ff;
+  text-decoration: none;
+  margin-right: 10px;
+  padding: 10px 30px;
+}
+
+.seriesEdit-button:hover {
+  cursor: pointer;
+  background-color: #779bff;
+}
+
+.seriesDelete-button {
+  border: 0px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 600;
+  background-color: #ff463c;
+  text-decoration: none;
+  margin-right: 10px;
+  padding: 10px 30px;
+}
+
+.seriesDelete-button:hover {
+  cursor: pointer;
+  background-color: #ff7777;
+}
+
+/* 所有リスト・巻数追加フォーム */
+.volumeLists-addForm {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.volumeLists-container {
+  width: 60%;
+}
+
+.sort-link p {
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.sort-link a {
+  color: blue;
+  margin-right: 10px;
+}
+
+.sort-link a:visited {
+  color: blue;
+}
+
+.volumeList-storeSearch label {
+  font-weight: 600;
+}
+
+#store_id {
+  width: 100px;
+  padding: 4px;
+}
+
+.totalBooks {
+  margin: 10px 0;
+}
+
+.volumeStore {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+.possessionList-table {
+  border-collapse: collapse;
+}
+
+.possessionList-table th {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1;
+  background-color: #ccc;
+  height: 50px;
+}
+
+/* 巻数追加フォーム */
+.volumeAddForm-container h3 {
+  font-size: 20px;
+}
+
+.volumeAddForm {
+  background-color: #ccc;
+  padding: 30px 10px;
+  border-radius: 5px;
+}
+
+.volumeAddForm-inputField {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+  .seriesbook-showPage {
+    padding: 0 10px 100px;
+  }
+
+  .seriesDetail, .seriesImg-TitleAuthor, .volumeLists-addForm {
+    display: block;
+  }
+
+  .seriesDetail {
+    text-align: center;
+  }
+
+  .seriesTitleAuthor, .seriesDelete-button {
+    margin: 0;
+  }
+
+  .volumeLists-container {
+    width: auto;
+  }
+
+  .seriesEditDelete-button {
+    margin-top: 20px;
+    justify-content: center;
+  }
+
+  .seriesEdit-button, .seriesDelete-button {
+    padding: 10px 20px;
+  }
+
+  .pc-br {
+    display: none;
+  }
+}
+
+
+//new・edit
+.seriesbook-new-edit {
+  position: relative;
+  top: 100px;
+  padding: 0 100px 100px;
+}
+
+.seriesbook-new-edit_form {
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 50px;
+}
+
+.seriesbook-new-edit_form h2 {
+  margin-bottom: 50px;
+}
+
+.imageDisplay {
+  width: 100%;
+}
+
+.coverImage {
+  width: 150px;
+  height: 100%;
+}
+
+/* GoogleBooks検索フォーム */
+.googleBooks-form {
+  background-color: #bbb;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.titleSearch-bar input {
+  width: 80%;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+.titleSearch-bar button {
+  padding: 6px;
+}
+
+/* 検索結果 */
+#search_results {
+  padding: 10px;
+}
+
+.candidate {
+  background-color: #fefefe;
+  border: 1px solid #888;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.candidate-bookTitle {
+  font-weight: 600;
+}
+
+.radio {
+  width: 30px;
+}
+
+.resultImage {
+  width: 100px;
+  margin: 0 10px;
+}
+
+@media (max-width: 767px) {
+  .seriesbook-new-edit {
+    padding: 0 10px 100px;
+  }
+
+  .sp-br {
+    display: block;
+  }
+}

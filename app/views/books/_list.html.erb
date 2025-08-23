@@ -1,0 +1,27 @@
+<div class="volumeStore">
+<%= form_with url: bulk_delete_seriesbook_books_path(seriesbook), method: :post, data: { turbo_frame: "books_list" } do %>
+  <table class="possessionList-table">
+    <thead>
+      <tr>
+        <th>巻数</th>
+        <th>購入ストア</th>
+        <th><%= submit_tag "選択した巻を削除", data: { turbo_confirm: "本当に削除しますか？" } %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% books.each do |book| %>
+        <tr>
+          <td><%= book.volume_number %></td>
+          <td><%= book.store.store_name %></td>
+          <td>
+            <label class="checkbox-cell">
+              <%= check_box_tag "book_ids[]", book.id %>
+            </label>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% end %>
+</div>

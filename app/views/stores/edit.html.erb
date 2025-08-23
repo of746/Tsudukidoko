@@ -1,0 +1,22 @@
+<div class="storeEditPage">
+  <div class="back_link"><%= link_to "ストア一覧に戻る", stores_path %></div>
+  <div class="storeEdit_form">
+    <h2>登録ストア名の変更</h2>
+    <%= form_with model: @store, local: true do |f| %>
+
+      <ul class="error-message">
+        <% @store.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+
+      <div class="inputForm">
+          <div class="flex"><%= f.label :store_name, "ストア名" %><span>（必須）</span></div>
+          <%= f.text_field :store_name, placeholder: "ストア名を入力（最大20文字）", maxlength: "20", class: "text_field" %>
+      </div>
+      <div class="submit_button-container">
+        <%= f.submit "更新", class: "submit_button" %>
+      </div>
+    <% end %>
+  </div>
+</div>

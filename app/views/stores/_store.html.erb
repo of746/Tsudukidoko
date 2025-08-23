@@ -1,0 +1,18 @@
+<div class="storeList-frame">
+  <%= turbo_frame_tag dom_id(store) do %>
+    <ul>
+      <li>
+        <%= store.store_name %>
+        <% if store.user_id == current_user.id %>
+          <div class="store-buttons">
+            <%= link_to "編集", edit_store_path(store), class: "storeEdit edit-button" %>
+            <%= button_to "削除", store_path(store),
+                  class: "storeDelete delete-button",
+                  method: :delete,
+                  data: { confirm: "ストアに関連する巻数データも削除されますがよろしいですか？" } %>
+          </div>
+        <% end %>
+      </li>
+    </ul>
+  <% end %>
+</div>

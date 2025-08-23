@@ -1,0 +1,57 @@
+<div class="seriesbook-new-edit">
+  <div class="back_link"><%= link_to "戻る", :back %></div>
+  <div class="seriesbook-new-edit_form">
+    <h2>シリーズ情報の編集</h2>
+    <%= form_with model: @seriesbook, local: true do |f| %>
+
+      <ul class="error-message">
+        <% @seriesbook.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+
+      <div class="inputForm">
+        <div class="flex"><%= f.label :title, "シリーズタイトル" %><span>（必須）</span></div>
+        <%= f.text_field :title, placeholder: "例）ドラえもん", maxlength: "50", class: "text_field" %>
+      </div>
+
+      <div class="inputForm">
+        <%= f.label :author, "作者名" %>
+        <%= f.text_field :author, placeholder: "例）藤子・F・不二雄", maxlength: "50", class: "text_field" %>
+      </div>
+
+      <div class="inputForm">
+        <div class="imageDisplay">
+          <% if @seriesbook.cover_url.present? %>
+            <div class="coverImage-registered">
+              <div><%= f.label :cover_url, "登録済のカバー画像" %></div>
+              <div><%= image_tag @seriesbook.cover_url, alt: "カバー画像", class: "coverImage" %></div>
+            </div>
+          <% else %>
+            <div class="coverImage-unregistered">
+              <div><%= f.label :cover_url, "カバー画像（未登録）" %></div>
+              <div><%= image_tag '/assets/default.jpg', alt: "デフォルト画像", class: "coverImage" %></div>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="googleBooks-form">
+          <h3>Google Booksで表紙を検索</h3>
+          <div class="titleSearch-bar">
+            <input type="text" id="book_query" placeholder="タイトル検索">
+            <button type="button" id="search_button">検索</button>
+          </div>
+
+          <!-- 検索結果 -->
+          <div id="search_results"></div>
+        </div>
+      </div>
+
+      <%= f.hidden_field :cover_url, id: "cover_url_field" %>
+
+      <div class="submit_button-container">
+        <%= f.submit "保存", class: "submit_button" %>
+      </div>
+    <% end %>
+  </div>
+</div>

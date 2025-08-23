@@ -1,0 +1,15 @@
+<% candidates.each_with_index do |book, i| %>
+  <label>
+  <div class="candidate">
+    <% if book[:cover].present? %>
+      <input class="radio" type="radio" name="selected_cover" value="<%= book[:cover] %>" <%= 'checked' if i.zero? %>>
+      <%= image_tag book[:cover], alt: book[:title], class: "resultImage" %>
+    <% end %>
+    <div>
+      <p class="candidate-bookTitle"><%= book[:title] %></p>
+      <p><%= book[:authors] %></p>
+    </div>
+  </div>
+  </label>
+<% end %>
+

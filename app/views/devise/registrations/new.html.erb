@@ -1,0 +1,33 @@
+<div class="signInPage">
+  <div class="login-signin-form">
+    <h2>アカウント登録</h2>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="inputForm">
+        <div class="flex"><%= f.label :email, "メールアドレス" %><span>（必須）</span></div>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "text_field" %>
+      </div>
+
+      <div class="inputForm">
+        <div class="flex"><%= f.label :password, "パスワード" %><span>（必須）</span></div>
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "6文字以上で入力", class: "text_field" %>
+      </div>
+
+      <div class="inputForm">
+        <div class="flex"><%= f.label :password_confirmation, "確認用パスワード" %><span>（必須）</span></div>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "text_field" %>
+      </div>
+
+      <div class="submit_button-container">
+        <%= f.submit "登録", class: "submit_button" %>
+      </div>
+
+      <div class="login-link">
+        <p>アカウントをお持ちの方</p>
+        <%= link_to "ログイン", new_user_session_path, class: "link-button" %>
+      </div>
+    <% end %>
+  </div>
+</div>

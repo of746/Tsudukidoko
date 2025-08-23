@@ -1,0 +1,163 @@
+//電子書籍ストア一覧（index）
+.storePage {
+  position: relative;
+  top: 100px;
+  padding: 0 100px 100px;
+}
+
+.storePage h2 {
+  text-align: left;
+}
+
+/* 新規ストア追加のフレーム */
+.addStore {
+  background-color: #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addStore-frame {
+  padding: 5px;
+}
+
+.add-button {
+  padding: 5px;
+}
+
+/* ストアリストのフレーム */
+.storeList {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 30px 30px;
+}
+
+.storeList-frame {
+  margin-bottom: 20px;
+}
+
+.storeList-frame ul {
+  padding-left: 0;
+}
+
+.storeList-frame li {
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  margin-left: 10px;
+}
+
+.storeEdit {
+  padding: 0 10px;
+}
+
+.store-buttons {
+  display: flex;
+  margin-left: 10px;
+}
+
+.storeDelete {
+  padding: 0 10px;
+}
+
+@media (max-width: 767px) {
+  .storePage {
+    padding: 0 10px 100px;
+  }
+
+  .addStore {
+    display: block;
+    text-align: center;
+  }
+
+  .storeList {
+    padding: 30px 10px;
+  }
+
+  .storeList-frame li {
+    text-align: center;
+    margin-left: 0;
+    display: block;
+  }
+
+  .store-buttons {
+    margin: 0 0 5px;
+    justify-content: center;
+  }
+}
+
+
+
+//ストア名の編集（edit）
+.storeEditPage {
+  position: relative;
+  top: 100px;
+  padding: 0 100px 100px;
+}
+
+.storeEdit_form {
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 50px;
+}
+
+.storeEdit_form h2 {
+  margin-bottom: 20px;
+}
+
+.storeEdit_form table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 20px;
+}
+
+.storeEdit_form tr th {
+  text-align: left;
+}
+
+.storeEdit_form tr th span {
+  color: #f00;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.text_field {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+/* 更新ボタン */
+.submit_button-container {
+  margin: 0;
+  text-align: center;
+}
+
+.submit_button {
+  background-color: #3c70ff;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px;
+  width: 70%;
+}
+
+.submit_button:hover {
+  cursor: pointer;
+  background-color: #779bff;
+}
+
+
+@media (max-width: 767px) {
+  .storeEditPage {
+    padding: 0 10px 100px;
+  }
+
+  .storeEdit_form {
+    padding: 30px 20px;
+  }
+}
