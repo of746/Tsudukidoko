@@ -71,4 +71,10 @@ gem "hotwire-rails"
 
 gem "devise-i18n", "~> 1.14"
 
-gem 'rspec-rails'
+group :test do
+  gem 'rspec-rails'
+end
+
+group :development do
+  gem 'rails-erd'
+end
