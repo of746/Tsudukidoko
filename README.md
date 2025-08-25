@@ -39,6 +39,9 @@ https://tsudukidoko-35a3c20c5d93.herokuapp.com/
 - デプロイ: Heroku
 - テスト: RSpec
 
+## ER図
+app/assets/images/er.png
+
 ## 工夫した点
 - ゲストログイン機能を実装し、閲覧者がすぐ体験できるよう配慮
 - 範囲入力を可能にし、一度に複数の巻数を登録できるよう改善
