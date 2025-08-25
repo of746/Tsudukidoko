@@ -29,6 +29,7 @@
 - バックエンド：Ruby 3.3.3 / Rails Rails 6.1.3.2
 - DB：PostgreSQL
 - 認証:：Devise
+- 外部API：Google Books API
 - バージョン管理：Git / GitHub
 - デプロイ: Heroku
 - テスト: RSpec
