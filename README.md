@@ -4,7 +4,7 @@
 複数のストアで購入した電子書籍をシリーズごとにまとめて管理し、購入状況を確認できるWebアプリ。
 
 ## サービス画像
-app/assets/images/screenshot.png
+![スクリーンショット](app/assets/images/screenshot.png)
 
 ## サービスURL
 https://tsudukidoko-35a3c20c5d93.herokuapp.com/
@@ -40,7 +40,7 @@ https://tsudukidoko-35a3c20c5d93.herokuapp.com/
 - テスト: RSpec
 
 ## ER図
-app/assets/images/er.png
+![ER図](app/assets/images/er.png)
 
 ## 工夫した点
 - ゲストログイン機能を実装し、閲覧者がすぐ体験できるよう配慮
