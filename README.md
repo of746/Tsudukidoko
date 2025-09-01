@@ -30,7 +30,7 @@ https://tsudukidoko-35a3c20c5d93.herokuapp.com/
 - ストアの追加・削除
 
 ## 使用技術
-- フロントエンド：HTML / CSS
+- フロントエンド：HTML / CSS / JavaScript
 - バックエンド：Ruby 3.3.3 / Rails 6.1.3.2
 - DB：PostgreSQL
 - 認証:：Devise
